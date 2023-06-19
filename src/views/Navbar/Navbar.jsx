@@ -11,7 +11,7 @@ const Navbar = () => (
     </span>
     <ul>
       <li>
-        <NavLink to="/" exact activeClassName="active-link">
+        <NavLink to="/" className="rockets" activeClassName="active-link">
           Rockets
         </NavLink>
       </li>
