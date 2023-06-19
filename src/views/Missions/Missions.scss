@@ -1,3 +1,27 @@
-h1 {
-  color: black;
+.missions {
+  table {
+    width: 100%;
+    border-collapse: collapse;
+
+    th,
+    td {
+      padding: 8px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    th {
+      font-weight: bold;
+    }
+
+    td:last-child {
+      text-align: center;
+    }
+
+    button {
+      padding: 6px 12px;
+      background-color: #eee;
+      border: none;
+      cursor: pointer;
+    }
+  }
 }
