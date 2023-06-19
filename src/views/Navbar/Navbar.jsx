@@ -11,17 +11,17 @@ const Navbar = () => (
     </span>
     <ul>
       <li>
-        <NavLink to="/" exact activeClassName="active-link">
+        <NavLink to="/" exact="true" activeclassname="active-link">
           Rockets
         </NavLink>
       </li>
       <li>
-        <NavLink to="/missions" className="missions" activeClassName="active-link">
+        <NavLink to="/missions" className="missions" activeclassname="active-link">
           Missions
         </NavLink>
       </li>
       <li>
-        <NavLink to="/profile" activeClassName="active-link">
+        <NavLink to="/profile" activeclassname="active-link">
           Profile
         </NavLink>
       </li>
