@@ -5,7 +5,7 @@ import './Navbar.scss';
 const Navbar = () => (
   <nav>
     <span className="logo">
-      Space Travelers' Hub
+      Space Travelers&rsquo; Hub
     </span>
     <ul>
       <li>
