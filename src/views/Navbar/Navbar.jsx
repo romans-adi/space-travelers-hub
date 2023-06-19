@@ -1,10 +1,12 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import './Navbar.scss';
+import logoImage from '../../assets/planeticon.png';
 
 const Navbar = () => (
   <nav>
     <span className="logo">
+      <img src={logoImage} alt="logo" className="logo-image" />
       Space Travelers&rsquo; Hub
     </span>
     <ul>
@@ -14,7 +16,7 @@ const Navbar = () => (
         </NavLink>
       </li>
       <li>
-        <NavLink to="/missions" activeClassName="active-link">
+        <NavLink to="/missions" className="missions" activeClassName="active-link">
           Missions
         </NavLink>
       </li>
