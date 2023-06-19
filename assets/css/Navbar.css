@@ -1,0 +1,39 @@
+/* stylelint-disable at-rule-no-unknown */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #ccc;
+}
+
+nav .logo-image {
+  width: 70px;
+}
+
+nav span {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+nav ul {
+  display: flex;
+  gap: 10px;
+  list-style: none;
+}
+
+nav ul li {
+  color: #0074d9;
+}
+
+nav ul li .missions::after {
+  content: "|";
+  font-weight: bold;
+  padding-left: 7px;
+}
+
+nav ul li .active {
+  text-decoration: underline;
+}
