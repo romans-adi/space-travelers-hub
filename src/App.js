@@ -2,7 +2,6 @@ import './App.scss';
 import { Provider } from 'react-redux';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import store from './store';
-// import { createLogger } from 'redux-logger';
 import Rockets from './views/Rockets/Rockets';
 import Profile from './views/Profile/Profile';
 import Missions from './views/Missions/Missions';

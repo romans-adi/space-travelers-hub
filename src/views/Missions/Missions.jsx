@@ -3,7 +3,9 @@ import { useEffect } from 'react';
 import useSWR from 'swr';
 import { Vortex } from 'react-loader-spinner';
 import { useDispatch, useSelector } from 'react-redux';
-import { setMissions, joinMission, leaveMission } from '../../redux/missions/missionsSlice';
+import {
+  setMissions, setJoinedMissions, joinMission, leaveMission,
+} from '../../redux/missions/missionsSlice';
 import fetchMissions from '../../redux/missions/missionsAPI';
 import './Missions.scss';
 
@@ -26,6 +28,10 @@ const Missions = () => {
       dispatch(setMissions(fetchedMissions));
     }
   }, [dispatch, fetchedMissions]);
+
+  useEffect(() => {
+    dispatch(setJoinedMissions(missions));
+  }, [dispatch, missions]);
 
   if (error) {
     return <div>Error fetching missions data.</div>;
@@ -54,13 +60,13 @@ const Missions = () => {
           <tr>
             <th>Mission</th>
             <th>Description</th>
-            <th>Status</th>
-            <th />
+            <th className="status">Status</th>
+            <th className="join-leave" />
           </tr>
         </thead>
         <tbody>
           {missions.map((mission, index) => (
-            <tr key={mission.mission_id} style={{ backgroundColor: index % 2 === 0 ? '#fff' : '#eee' }}>
+            <tr key={mission.mission_id} style={{ backgroundColor: index % 2 === 0 ? '#eee' : '#fff' }}>
               <td className="mission-name">{mission.mission_name}</td>
               <td className="mission-description">{mission.description}</td>
               <td className="status-col">

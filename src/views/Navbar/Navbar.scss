@@ -29,7 +29,7 @@ nav {
       .missions-link {
         &::after {
           content: "|";
-          color: black;
+          color: $color-btn-join;
           font-weight: bold;
           padding-left: 7px;
         }

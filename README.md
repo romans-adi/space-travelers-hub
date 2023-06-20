@@ -50,8 +50,7 @@ This project is designed to serve a company that offers commercial and scientifi
 
   <ul>
      <li><a href="https://react.dev/">React</a></li>
-      <li><a href="https://github.com/pmndrs/zustand">Zustand</a></li>
-      <li><a href="https://vitejs.dev/">Vite</a></li>
+      <li><a href="https://redux-toolkit.js.org/">Redux Toolkit</a></li>
       <li><a href="https://sass-lang.com/">SCSS</a></li>
   </ul>
 
@@ -86,7 +85,7 @@ Using SSH-key:
 
 Using HTTPS:
 
-> git clone https://github.com/romans-adi/kanban-zustand.git
+> git clone https://github.com/romans-adi/space-travelers.git
 
 You can also create the new directory just adding the name of it in the end of command. For example:
 
