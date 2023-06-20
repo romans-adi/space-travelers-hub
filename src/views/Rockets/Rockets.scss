@@ -14,14 +14,10 @@
       gap: 10px;
 
       .info {
-        display: flex;
-        flex-direction: column;
-        gap: 7px;
-        justify-content: space-around;
-
         .reserve-btn {
-          width: 120px;
+          width: 140px;
           padding: 5px;
+          margin-top: 2px;
           background-color: $main-blue;
           color: white;
           border-radius: 3px;
@@ -38,6 +34,7 @@
 
         .cancel-btn {
           width: 140px;
+          margin-top: 2px;
           padding: 5px;
           background-color: white;
           color: $color-not-member;
@@ -54,6 +51,8 @@
         }
 
         p {
+          margin-bottom: 10px;
+
           span {
             background-color: $color-active-member;
             border-radius: 3px;
