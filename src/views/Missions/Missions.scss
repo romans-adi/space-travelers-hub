@@ -15,11 +15,11 @@
       padding: 8px;
       border: 1px solid #ccc;
 
-&.mission-description {
-    font-family: 'Lato', sans-serif;
-    letter-spacing: 0.2px;
-    line-height: 1.6;
-}
+      &.mission-description {
+        font-family: 'Lato', sans-serif;
+        letter-spacing: 0.2px;
+        line-height: 1.6;
+      }
 
       &.mission-name {
         font-weight: bold;
@@ -58,30 +58,30 @@
 
       &.mission-status {
         button {
-        font-family: 'Roboto', sans-serif;
-        background: transparent;
-        padding: 0.5rem;
-        cursor: pointer;
+          font-family: 'Roboto', sans-serif;
+          background: transparent;
+          padding: 0.5rem;
+          cursor: pointer;
 
-        .join-mission {
-          color: #000;
-          border: 2px solid black;
+          .join-mission {
+            color: #000;
+            border: 2px solid black;
 
-          &:hover {
-            background-color: #000;
-            color: white;
+            &:hover {
+              background-color: #000;
+              color: white;
+            }
           }
-        }
 
-        .leave-mission {
-          border: 2px solid red;
-          color: red;
+          .leave-mission {
+            border: 2px solid red;
+            color: red;
 
-          &:hover {
-            background-color: red;
-            color: #fff;
+            &:hover {
+              background-color: red;
+              color: #fff;
+            }
           }
-        }
         }
       }
 
