@@ -1,17 +1,21 @@
 /* eslint-disable jsx-a11y/control-has-associated-label */
 import { useEffect } from 'react';
-import useSWR from 'swr';
 import { Vortex } from 'react-loader-spinner';
 import { useDispatch, useSelector } from 'react-redux';
 import {
-  setMissions, setJoinedMissions, joinMission, leaveMission,
+  joinMission,
+  leaveMission,
+  setFetchedMissions,
+  setMissions,
 } from '../../redux/missions/missionsSlice';
-import fetchMissions from '../../redux/missions/missionsAPI';
 import './Missions.scss';
+import fetchMissions from '../../redux/missions/missionsAPI';
 
 const Missions = () => {
   const dispatch = useDispatch();
   const missions = useSelector((state) => state.missions.missions);
+  const error = useSelector((state) => state.missions.error);
+  const fetchedMissions = useSelector((state) => state.missions.fetchedMissions);
 
   const handleJoinMission = (missionId) => {
     dispatch(joinMission(missionId));
@@ -21,17 +25,20 @@ const Missions = () => {
     dispatch(leaveMission(missionId));
   };
 
-  const { data: fetchedMissions, error } = useSWR('missions', fetchMissions);
-
   useEffect(() => {
-    if (fetchedMissions) {
-      dispatch(setMissions(fetchedMissions));
-    }
-  }, [dispatch, fetchedMissions]);
+    const fetchMissionData = async () => {
+      try {
+        const missions = await fetchMissions();
+        dispatch(setMissions(missions));
+        dispatch(setFetchedMissions());
+      } catch (error) {
+        // eslint-disable-next-line no-console
+        console.error('Error:', error);
+      }
+    };
 
-  useEffect(() => {
-    dispatch(setJoinedMissions(missions));
-  }, [dispatch, missions]);
+    fetchMissionData();
+  }, [dispatch]);
 
   if (error) {
     return <div>Error fetching missions data.</div>;
