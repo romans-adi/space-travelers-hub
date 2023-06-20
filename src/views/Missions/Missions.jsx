@@ -3,7 +3,9 @@ import { useEffect } from 'react';
 import useSWR from 'swr';
 import { Vortex } from 'react-loader-spinner';
 import { useDispatch, useSelector } from 'react-redux';
-import { setMissions, joinMission, leaveMission } from '../../redux/missions/missionsSlice';
+import {
+  setMissions, setJoinedMissions, joinMission, leaveMission,
+} from '../../redux/missions/missionsSlice';
 import fetchMissions from '../../redux/missions/missionsAPI';
 import './Missions.scss';
 
@@ -26,6 +28,10 @@ const Missions = () => {
       dispatch(setMissions(fetchedMissions));
     }
   }, [dispatch, fetchedMissions]);
+
+  useEffect(() => {
+    dispatch(setJoinedMissions(missions));
+  }, [dispatch, missions]);
 
   if (error) {
     return <div>Error fetching missions data.</div>;

@@ -1,3 +1,45 @@
-h1 {
-  color: black;
+.profile {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  width: 100%;
+  gap: 20%;
+  font-family: 'Roboto', sans-serif;
+
+  .joined-missions,
+  .booked-rockets {
+    width: 50%;
+
+    h2 {
+      margin-bottom: 10px;
+      font-size: 3rem;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        text-align: left;
+        list-style: none;
+        display: flex;
+        align-items: center;
+        border-right: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+        border-left: 1px solid #ccc;
+        padding: 1rem 0.5rem 1.5rem;
+        font-size: 1.5rem;
+        background-color: transparent;
+
+        &:first-child {
+          border-top: 1px solid #ccc;
+        }
+
+        &:last-child {
+          border-bottom: 1px solid #ccc;
+        }
+      }
+    }
+  }
 }
