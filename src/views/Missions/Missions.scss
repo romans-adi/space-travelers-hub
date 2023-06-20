@@ -10,10 +10,10 @@
     border-collapse: collapse;
     border: 1px solid $color-border;
 
-  .join-leave {
-    text-align: center;
-    padding: 0 5rem;
-  }
+    .join-leave {
+      text-align: center;
+      padding: 0 5rem;
+    }
 
     th,
     td {
@@ -68,6 +68,7 @@
 
       &.mission-status {
         vertical-align: middle;
+
         button {
           font-family: 'Roboto', sans-serif;
           background: transparent;
