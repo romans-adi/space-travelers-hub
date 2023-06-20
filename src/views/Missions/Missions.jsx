@@ -28,16 +28,10 @@ const Missions = () => {
 
   useEffect(() => {
     const fetchMissionData = async () => {
-      try {
-        const missions = await fetchMissions();
-        dispatch(setMissions(missions));
-        dispatch(setFetchedMissions());
-      } catch (error) {
-        // eslint-disable-next-line no-console
-        console.error('Error:', error);
-      }
+      const missions = await fetchMissions();
+      dispatch(setMissions(missions));
+      dispatch(setFetchedMissions());
     };
-
     fetchMissionData();
   }, [dispatch]);
 
