@@ -8,12 +8,12 @@
   table {
     width: 100%;
     border-collapse: collapse;
-    border: 1px solid #ccc;
+    border: 1px solid $color-border;
 
     th,
     td {
       padding: 8px;
-      border: 1px solid #ccc;
+      border: 1px solid $color-border;
 
       &.mission-description {
         font-family: 'Lato', sans-serif;
@@ -37,16 +37,16 @@
         pointer-events: none;
 
         .active-member {
-          background-color: lightseagreen;
+          background-color: $color-active-member;
           font-weight: bold;
-          color: white;
+          color: $color-text-light;
         }
 
         .not-member {
-          background-color: #777;
+          background-color: $color-not-member;
           text-transform: uppercase;
           font-weight: bold;
-          color: #fff;
+          color: $color-text-light;
         }
       }
 
@@ -63,23 +63,23 @@
           padding: 0.5rem;
           cursor: pointer;
 
-          .join-mission {
-            color: #000;
-            border: 2px solid black;
+          &.join-mission {
+            color: $color-text-dark;
+            border: 2px solid $color-btn-join;
 
             &:hover {
-              background-color: #000;
-              color: white;
+              background-color: $color-text-dark;
+              color: $color-text-light;
             }
           }
 
-          .leave-mission {
-            border: 2px solid red;
-            color: red;
+          &.leave-mission {
+            border: 2px solid $color-leave-mission;
+            color: $color-leave-mission;
 
             &:hover {
-              background-color: red;
-              color: #fff;
+              background-color: $color-leave-mission;
+              color: $color-text-light;
             }
           }
         }
