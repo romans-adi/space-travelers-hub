@@ -16,6 +16,7 @@ const Missions = () => {
   const missions = useSelector((state) => state.missions.missions);
   const error = useSelector((state) => state.missions.error);
   const fetchedMissions = useSelector((state) => state.missions.fetchedMissions);
+  const joinedMissions = useSelector((state) => state.missions.joinedMissions);
 
   const handleJoinMission = (missionId) => {
     dispatch(joinMission(missionId));
@@ -78,13 +79,13 @@ const Missions = () => {
               <td className="mission-description">{mission.description}</td>
               <td className="status-col">
                 <span
-                  className={`member-status-badge ${mission.reserved ? 'active-member' : 'not-member'}`}
+                  className={`member-status-badge ${joinedMissions.includes(mission.mission_id) ? 'active-member' : 'not-member'}`}
                 >
-                  {mission.reserved ? 'Active Member' : 'Not a Member'}
+                  {joinedMissions.includes(mission.mission_id) ? 'Active Member' : 'Not a Member'}
                 </span>
               </td>
               <td className="mission-status">
-                {mission.reserved ? (
+                {joinedMissions.includes(mission.mission_id) ? (
                   <button
                     className="leave-mission"
                     onClick={() => handleLeaveMission(mission.mission_id)}

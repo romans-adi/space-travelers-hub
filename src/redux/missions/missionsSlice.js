@@ -27,6 +27,15 @@ const missionsSlice = createSlice({
     setFetchedMissions: (state) => {
       state.fetchedMissions = true;
     },
+    updateMissionReservation: (state, action) => {
+      const { missionId, reserved } = action.payload;
+      const missionIndex = state.missions.findIndex(
+        (mission) => mission.mission_id === missionId,
+      );
+      if (missionIndex !== -1) {
+        state.missions[missionIndex].reserved = reserved;
+      }
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -46,30 +55,28 @@ const missionsSlice = createSlice({
   },
 });
 
-export const { setJoinedMissions, setMissions, setFetchedMissions } = missionsSlice.actions;
+export const {
+  setJoinedMissions,
+  setMissions,
+  setFetchedMissions,
+  updateMissionReservation,
+} = missionsSlice.actions;
 
 export const joinMission = (missionId) => (dispatch, getState) => {
-  const { missions } = getState().missions;
-  const updatedMissions = missions.map((mission) => {
-    if (mission.mission_id === missionId) {
-      return { ...mission, reserved: true };
-    }
-    return mission;
-  });
-  dispatch(setJoinedMissions([...getState().missions.joinedMissions, missionId]));
-  dispatch(setMissions(updatedMissions));
+  const { missions, joinedMissions } = getState().missions;
+  const mission = missions.find((m) => m.mission_id === missionId);
+
+  if (mission && !joinedMissions.includes(missionId)) {
+    dispatch(updateMissionReservation({ missionId, reserved: true }));
+    dispatch(setJoinedMissions([...joinedMissions, missionId]));
+  }
 };
 
 export const leaveMission = (missionId) => (dispatch, getState) => {
-  const { missions } = getState().missions;
-  const updatedMissions = missions.map((mission) => {
-    if (mission.mission_id === missionId) {
-      return { ...mission, reserved: false };
-    }
-    return mission;
-  });
-  dispatch(setJoinedMissions(getState().missions.joinedMissions.filter((id) => id !== missionId)));
-  dispatch(setMissions(updatedMissions));
+  dispatch(updateMissionReservation({ missionId, reserved: false }));
+  dispatch(
+    setJoinedMissions(getState().missions.joinedMissions.filter((id) => id !== missionId)),
+  );
 };
 
 export default missionsSlice.reducer;
