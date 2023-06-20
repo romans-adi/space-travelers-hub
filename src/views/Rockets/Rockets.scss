@@ -1,3 +1,39 @@
-h1 {
-  color: black;
+@import '../../variables';
+
+.rocket-div {
+  .rocket-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 15px;
+
+    .rocket {
+      display: flex;
+      gap: 10px;
+
+      .info {
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+        justify-content: space-around;
+
+        .reserve-btn {
+          width: 120px;
+          padding: 5px;
+          background-color: $main-blue;
+          color: white;
+          border-radius: 3px;
+          transition: 0.3s;
+          border: 1px solid $main-blue;
+          cursor: pointer;
+        }
+
+        .reserve-btn:hover {
+          background-color: white;
+          color: $main-blue;
+          border: 1px solid $main-blue;
+        }
+      }
+    }
+  }
 }
