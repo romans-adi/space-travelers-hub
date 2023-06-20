@@ -1,20 +1,37 @@
 /* eslint-disable jsx-a11y/control-has-associated-label */
+import { useEffect } from 'react';
 import useSWR from 'swr';
 import { Vortex } from 'react-loader-spinner';
+import { useDispatch, useSelector } from 'react-redux';
+import { setMissions, joinMission, leaveMission } from '../../redux/missions/missionsSlice';
 import fetchMissions from '../../redux/missions/missionsAPI';
 import './Missions.scss';
 
 const Missions = () => {
-  const { data: missions, error } = useSWR('missions', fetchMissions);
-  const member = {
-    status: 'Not A Member',
+  const dispatch = useDispatch();
+  const missions = useSelector((state) => state.missions.missions);
+
+  const handleJoinMission = (missionId) => {
+    dispatch(joinMission(missionId));
   };
+
+  const handleLeaveMission = (missionId) => {
+    dispatch(leaveMission(missionId));
+  };
+
+  const { data: fetchedMissions, error } = useSWR('missions', fetchMissions);
+
+  useEffect(() => {
+    if (fetchedMissions) {
+      dispatch(setMissions(fetchedMissions));
+    }
+  }, [dispatch, fetchedMissions]);
 
   if (error) {
     return <div>Error fetching missions data.</div>;
   }
 
-  if (!missions) {
+  if (!fetchedMissions) {
     return (
       <div className="loading-wrapper">
         <Vortex
@@ -47,15 +64,29 @@ const Missions = () => {
               <td className="mission-name">{mission.mission_name}</td>
               <td className="mission-description">{mission.description}</td>
               <td className="status-col">
-                <span className={`member-status-badge ${member.status === 'Active Member' ? 'active-member' : 'not-member'}`}>
-                  {member.status === 'Active Member' ? 'Active Member' : 'Not a Member'}
+                <span
+                  className={`member-status-badge ${mission.reserved ? 'active-member' : 'not-member'}`}
+                >
+                  {mission.reserved ? 'Active Member' : 'Not a Member'}
                 </span>
               </td>
               <td className="mission-status">
-                {mission.status === 'upcoming' ? (
-                  <button className="join-mission" type="button">Join Mission</button>
+                {mission.reserved ? (
+                  <button
+                    className="leave-mission"
+                    onClick={() => handleLeaveMission(mission.mission_id)}
+                    type="button"
+                  >
+                    Leave Mission
+                  </button>
                 ) : (
-                  <button className="leave-mission" type="button">Leave Mission</button>
+                  <button
+                    className="join-mission"
+                    onClick={() => handleJoinMission(mission.mission_id)}
+                    type="button"
+                  >
+                    Join Mission
+                  </button>
                 )}
               </td>
             </tr>
