@@ -26,9 +26,10 @@ nav {
     li {
       color: $main-blue;
 
-      .missions {
+      .missions-link {
         &::after {
           content: "|";
+          color: black;
           font-weight: bold;
           padding-left: 7px;
         }

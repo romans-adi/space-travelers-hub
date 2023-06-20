@@ -1,3 +1,97 @@
-h1 {
-  color: black;
+@import '../../variables';
+
+.missions {
+  text-align: left;
+  font-family: 'Roboto', sans-serif;
+  margin: 1rem 0 3rem;
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ccc;
+
+    th,
+    td {
+      padding: 8px;
+      border: 1px solid #ccc;
+
+      &.mission-description {
+        font-family: 'Lato', sans-serif;
+        letter-spacing: 0.2px;
+        line-height: 1.6;
+      }
+
+      &.mission-name {
+        font-weight: bold;
+      }
+
+      .member-status-badge {
+        display: inline-block;
+        padding: 4px 8px;
+        border-radius: 4px;
+        font-size: 14px;
+        font-weight: bold;
+      }
+
+      &.status-col {
+        pointer-events: none;
+
+        .active-member {
+          background-color: lightseagreen;
+          font-weight: bold;
+          color: white;
+        }
+
+        .not-member {
+          background-color: #777;
+          text-transform: uppercase;
+          font-weight: bold;
+          color: #fff;
+        }
+      }
+
+      &.status-col,
+      &.mission-status {
+        white-space: nowrap;
+        margin: 0.2rem;
+      }
+
+      &.mission-status {
+        button {
+          font-family: 'Roboto', sans-serif;
+          background: transparent;
+          padding: 0.5rem;
+          cursor: pointer;
+
+          .join-mission {
+            color: #000;
+            border: 2px solid black;
+
+            &:hover {
+              background-color: #000;
+              color: white;
+            }
+          }
+
+          .leave-mission {
+            border: 2px solid red;
+            color: red;
+
+            &:hover {
+              background-color: red;
+              color: #fff;
+            }
+          }
+        }
+      }
+
+      th {
+        font-weight: bold;
+      }
+
+      td:last-child {
+        text-align: center;
+      }
+    }
+  }
 }
