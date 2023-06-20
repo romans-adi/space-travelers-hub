@@ -10,6 +10,11 @@
     border-collapse: collapse;
     border: 1px solid $color-border;
 
+  .join-leave {
+    text-align: center;
+    padding: 0 5rem;
+  }
+
     th,
     td {
       padding: 8px;
@@ -22,6 +27,7 @@
       }
 
       &.mission-name {
+        vertical-align: top;
         font-weight: bold;
       }
 
@@ -35,11 +41,13 @@
 
       &.status-col {
         pointer-events: none;
+        padding: 0.8rem;
 
         .active-member {
           background-color: $color-active-member;
           font-weight: bold;
           color: $color-text-light;
+          transition: 1s all ease-in-out;
         }
 
         .not-member {
@@ -47,16 +55,19 @@
           text-transform: uppercase;
           font-weight: bold;
           color: $color-text-light;
+          transition: 1s all ease-in-out;
         }
       }
 
       &.status-col,
       &.mission-status {
+        text-align: center;
         white-space: nowrap;
         margin: 0.2rem;
       }
 
       &.mission-status {
+        vertical-align: middle;
         button {
           font-family: 'Roboto', sans-serif;
           background: transparent;
@@ -66,23 +77,32 @@
           &.join-mission {
             color: $color-text-dark;
             border: 2px solid $color-btn-join;
+            transition: 1s all ease-in-out;
 
             &:hover {
               background-color: $color-text-dark;
               color: $color-text-light;
+              transition: all 0.3s ease-in;
             }
           }
 
           &.leave-mission {
             border: 2px solid $color-leave-mission;
             color: $color-leave-mission;
+            transition: 1s all ease-in-out;
 
             &:hover {
               background-color: $color-leave-mission;
               color: $color-text-light;
+              transition: all 0.3s ease-in;
             }
           }
         }
+      }
+
+      &.mission-status > button {
+        overflow: hidden;
+        white-space: nowrap;
       }
 
       th {
