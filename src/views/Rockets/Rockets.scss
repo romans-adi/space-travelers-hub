@@ -1,6 +1,8 @@
 @import '../../variables';
 
 .rocket-div {
+  font-family: "Lato", sans-serif;
+
   .rocket-list {
     display: flex;
     flex-direction: column;
@@ -32,6 +34,37 @@
           background-color: white;
           color: $main-blue;
           border: 1px solid $main-blue;
+        }
+
+        .cancel-btn {
+          width: 140px;
+          padding: 5px;
+          background-color: white;
+          color: $color-not-member;
+          border-radius: 3px;
+          transition: 0.3s;
+          border: 1px solid $color-not-member;
+          cursor: pointer;
+        }
+
+        .cancel-btn:hover {
+          background-color: white;
+          color: $color-leave-mission;
+          border: 1px solid $color-leave-mission;
+        }
+
+        p {
+          span {
+            background-color: $color-active-member;
+            border-radius: 3px;
+            padding: 2px 4px;
+            font-size: 13px;
+            font-weight: bold;
+            color: white;
+            margin-right: 4px;
+            font-family: "Roboto", sans-serif;
+            transition: 2s;
+          }
         }
       }
     }
