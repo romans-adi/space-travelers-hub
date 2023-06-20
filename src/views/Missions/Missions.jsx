@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import LoadingSpinner from '../../components/LoadingSpinner';
-import MissionsTable from '../../components/Missions/MissionsTable/MissionsTable';
+import MissionsTable from '../../components/Missions/MissionsTable';
 import {
   setFetchedMissions,
   setMissions,
@@ -15,20 +15,22 @@ const Missions = () => {
 
   useEffect(() => {
     const fetchMissionData = async () => {
-      try {
-        const missions = await fetchMissions();
-        dispatch(setMissions(missions));
-        dispatch(setFetchedMissions());
-      } catch (error) {
-        console.error('Error:', error);
-      }
+      const missions = await fetchMissions();
+      dispatch(setMissions(missions));
+      dispatch(setFetchedMissions());
     };
 
     fetchMissionData();
   }, [dispatch]);
 
   if (error) {
-    return <div>Error fetching missions data.</div>;
+    return (
+      <div>
+        Apologies for the inconvenience.
+        There was a problem retrieving the missions data.
+        {' '}
+      </div>
+    );
   }
 
   if (!fetchedMissions) {

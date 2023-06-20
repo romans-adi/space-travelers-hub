@@ -5,7 +5,7 @@ import store from './store';
 import Rockets from './views/Rockets/Rockets';
 import Profile from './views/Profile/Profile';
 import Missions from './views/Missions/Missions';
-import Navbar from './views/Navbar/Navbar';
+import Navbar from './components/Navbar/Navbar';
 
 function App() {
   return (

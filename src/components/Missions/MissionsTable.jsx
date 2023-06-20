@@ -1,23 +1,11 @@
 /* eslint-disable jsx-a11y/control-has-associated-label */
-import { useDispatch, useSelector } from 'react-redux';
-import {
-  joinMission,
-  leaveMission,
-} from '../../../redux/missions/missionsSlice';
+import { useSelector } from 'react-redux';
+import MissionButton from './MissionsButton';
 import './MissionsTable.scss';
 
 const MissionsTable = () => {
-  const dispatch = useDispatch();
   const missions = useSelector((state) => state.missions.missions);
   const joinedMissions = useSelector((state) => state.missions.joinedMissions);
-
-  const handleJoinMission = (missionId) => {
-    dispatch(joinMission(missionId));
-  };
-
-  const handleLeaveMission = (missionId) => {
-    dispatch(leaveMission(missionId));
-  };
 
   return (
     <div className="missions">
@@ -43,23 +31,10 @@ const MissionsTable = () => {
                 </span>
               </td>
               <td className="mission-status">
-                {joinedMissions.includes(mission.mission_id) ? (
-                  <button
-                    className="leave-mission"
-                    onClick={() => handleLeaveMission(mission.mission_id)}
-                    type="button"
-                  >
-                    Leave Mission
-                  </button>
-                ) : (
-                  <button
-                    className="join-mission"
-                    onClick={() => handleJoinMission(mission.mission_id)}
-                    type="button"
-                  >
-                    Join Mission
-                  </button>
-                )}
+                <MissionButton
+                  missionId={mission.mission_id}
+                  joinedMissions={joinedMissions}
+                />
               </td>
             </tr>
           ))}
