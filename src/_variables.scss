@@ -46,3 +46,23 @@ $color-text-light: #fff;
     }
   }
 }
+
+.read-more-button {
+  font-family: 'Roboto', sans-serif;
+  background: transparent;
+  color: $color-text-dark;
+  border: 2px solid $color-btn-join;
+  border-radius: 4px;
+  box-shadow: 0 4px 2px 0 rgba(0, 0, 0, 0.6);
+  transition: all 0.3s ease-in;
+  padding: 0.5rem;
+  cursor: pointer;
+  transition: 600ms all ease-out;
+  font-weight: semi-bold;
+
+  &:hover {
+    background-color: $color-text-dark;
+    color: $color-text-light;
+    box-shadow: none;
+  }
+}

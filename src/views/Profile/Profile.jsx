@@ -22,6 +22,12 @@ const Profile = () => {
     dispatch(leaveMission(missionId));
   };
 
+  const openWikipediaPage = (url) => {
+    if (url) {
+      window.open(url, '_blank');
+    }
+  };
+
   return (
     <div className="profile">
       <div className="joined-missions">
@@ -32,12 +38,19 @@ const Profile = () => {
           <ul>
             {joinedMissionNames.map((mission) => (
               <li className="profile-missions-list" key={mission.mission_id}>
-                {mission.mission_name}
+                <div className="mission-name">{mission.mission_name}</div>
                 <MissionsButton
                   missionId={mission.mission_id}
                   joinedMissions={joinedMissions}
                   onLeaveMission={handleLeaveMission}
                 />
+                <button
+                  type="button"
+                  className="read-more-button"
+                  onClick={() => openWikipediaPage(mission.wikipedia)}
+                >
+                  Read more
+                </button>
               </li>
             ))}
           </ul>
@@ -49,8 +62,17 @@ const Profile = () => {
           <p>No rockets reserved yet.</p>
         ) : (
           <ul>
-            {addedRocketsNames.map((rocketName) => (
-              <li key={rocketName}>{rocketName}</li>
+            {addedRocketsNames.map((rocket) => (
+              <li key={rocket.id}>
+                <span>{rocket.name}</span>
+                <button
+                  type="button"
+                  className="read-more-button"
+                  onClick={() => openWikipediaPage(rocket.wikipedia)}
+                >
+                  Read more
+                </button>
+              </li>
             ))}
           </ul>
         )}

@@ -35,7 +35,15 @@
         background-color: transparent;
 
         &.profile-missions-list {
+          display: flex;
           justify-content: space-between;
+          align-items: center;
+          gap: 2rem;
+          align-items: center;
+
+          .mission-name {
+            flex: 1;
+          }
         }
 
         &:first-child {
