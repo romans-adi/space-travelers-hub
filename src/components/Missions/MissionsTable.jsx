@@ -8,7 +8,7 @@ const MissionsTable = () => {
   const joinedMissions = useSelector((state) => state.missions.joinedMissions);
 
   return (
-    <div className="missions">
+    <div className="missions" data-testid="missions-table">
       <table>
         <thead>
           <tr>

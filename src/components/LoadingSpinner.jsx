@@ -1,7 +1,7 @@
 import { Vortex } from 'react-loader-spinner';
 
 const LoadingSpinner = () => (
-  <div className="loading-wrapper">
+  <div className="loading-wrapper" data-testid="loading-spinner">
     <Vortex
       visible
       height="80"
