@@ -119,6 +119,12 @@ Once the app is running, you can start booking rockets and joining space mission
 - Edit task details by clicking on a task and updating its information.
 - Update the status of a task to reflect its current state.
 
+### Tests
+
+To run tests, execute the following command:
+
+> npm test
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- CONTRIBUTING -->
