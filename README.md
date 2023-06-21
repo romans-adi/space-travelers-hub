@@ -33,11 +33,11 @@ This project is designed to serve a company that offers commercial and scientifi
  - [x] User-Friendly Interface: Offers an intuitive and engaging user interface, ensuring a smooth booking experience for both commercial and scientific space travel.
  - [x] Rocket Booking System: Enables users to browse through available rockets, choose suitable options, and book them for specific missions.
  - [x] Mission Selection: Allows users to explore various space missions, access detailed information, and join the ones that align with their interests.
- - [x] Search and filter tasks based on different criteria.
- - [x] Responsive design for seamless usage on different devices.
 
 ### Future Features <a name="key-features"></a>
 
+- [ ] Responsive design for seamless usage on different devices.
+- [ ] Search and filter tasks based on different criteria.
 - [ ] Secure Authentication: Implements a robust authentication system to ensure the privacy and security of user accounts and personal information.
 - [ ] Payment Integration: Integrates a secure payment gateway to facilitate smooth and hassle-free transactions for rocket bookings.
 - [ ] Personalized Profiles: Provides users with personalized profiles to manage their bookings, view mission history, and update personal information.
@@ -51,6 +51,7 @@ This project is designed to serve a company that offers commercial and scientifi
   <ul>
      <li><a href="https://react.dev/">React</a></li>
       <li><a href="https://redux-toolkit.js.org/">Redux Toolkit</a></li>
+      <li><a href="https://jestjs.io/">Jest</a></li>
       <li><a href="https://sass-lang.com/">SCSS</a></li>
   </ul>
 
@@ -60,11 +61,11 @@ Feel free to modify or expand the tech stack section based on the specific techn
 
 <!-- LIVE DEMO -->
 
-<!-- ## :rocket: Live Demo <a name="live-demo"></a>
+## :rocket: Live Demo <a name="live-demo"></a>
 
-- [Here is a Live Demo of this project]()
+- [Here is a Live Demo of this project](https://space-travelers-hub-05ai.onrender.com/)
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p> -->
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
 
@@ -118,6 +119,12 @@ Once the app is running, you can start booking rockets and joining space mission
 - Edit task details by clicking on a task and updating its information.
 - Update the status of a task to reflect its current state.
 
+### Tests
+
+To run tests, execute the following command:
+
+> npm test
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- CONTRIBUTING -->
@@ -164,7 +171,6 @@ Furthermore, if you would like to get in touch with us, you can find our contact
 We would like to thank the following individuals and projects for their contributions and inspiration:
 
 [SpaceX API](https://github.com/r-spacex/SpaceX-API): For providing real-time data and information about rockets and space missions, enabling us to create an immersive space travel experience.
-[Microverse Coding School](https://support.microverse.org/en/): For providing the education, guidance, and support that equipped us with the skills necessary to develop this project.
 
 <!-- AUTHORS -->
 
