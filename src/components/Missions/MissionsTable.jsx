@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/control-has-associated-label */
 import { useSelector } from 'react-redux';
-import MissionButton from './MissionsButton';
+import MissionsButton from './MissionsButton';
 import './MissionsTable.scss';
 
 const MissionsTable = () => {
@@ -31,7 +31,7 @@ const MissionsTable = () => {
                 </span>
               </td>
               <td className="mission-status">
-                <MissionButton
+                <MissionsButton
                   missionId={mission.mission_id}
                   joinedMissions={joinedMissions}
                 />

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { joinMission, leaveMission } from '../../redux/missions/missionsSlice';
 
-const MissionButton = ({ missionId, joinedMissions }) => {
+const MissionsButton = ({ missionId, joinedMissions }) => {
   const dispatch = useDispatch();
 
   const handleJoinMission = () => {
@@ -36,9 +36,9 @@ const MissionButton = ({ missionId, joinedMissions }) => {
   );
 };
 
-MissionButton.propTypes = {
+MissionsButton.propTypes = {
   missionId: PropTypes.string.isRequired,
   joinedMissions: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
-export default MissionButton;
+export default MissionsButton;
