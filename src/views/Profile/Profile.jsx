@@ -19,19 +19,27 @@ const Profile = () => {
     <div className="profile">
       <div className="joined-missions">
         <h2>My Missions</h2>
-        <ul>
-          {joinedMissionNames.map((missionName) => (
-            <li key={missionName}>{missionName}</li>
-          ))}
-        </ul>
+        {joinedMissionNames.length === 0 ? (
+          <p>No missions joined yet.</p>
+        ) : (
+          <ul>
+            {joinedMissionNames.map((missionName) => (
+              <li key={missionName}>{missionName}</li>
+            ))}
+          </ul>
+        )}
       </div>
       <div className="booked-rockets">
         <h2>My Rockets</h2>
-        <ul>
-          {addedRocketsNames.map((rocketName) => (
-            <li key={rocketName}>{rocketName}</li>
-          ))}
-        </ul>
+        {addedRocketsNames.length === 0 ? (
+          <p>No rockets reserved yet.</p>
+        ) : (
+          <ul>
+            {addedRocketsNames.map((rocketName) => (
+              <li key={rocketName}>{rocketName}</li>
+            ))}
+          </ul>
+        )}
       </div>
     </div>
   );
