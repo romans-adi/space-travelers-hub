@@ -17,7 +17,7 @@ const MissionsButton = ({ missionId, joinedMissions }) => {
   if (joinedMissions.includes(missionId)) {
     return (
       <button
-        className="leave-mission"
+        className="mission-button leave-mission"
         onClick={handleLeaveMission}
         type="button"
       >
@@ -27,7 +27,7 @@ const MissionsButton = ({ missionId, joinedMissions }) => {
   }
   return (
     <button
-      className="join-mission"
+      className="mission-button join-mission"
       onClick={handleJoinMission}
       type="button"
     >

@@ -12,3 +12,37 @@ $color-text-light: #fff;
 /* FONTS */
 
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Roboto:wght@300;400;500;700&display=swap');
+
+
+/* BUTTONS */
+
+.mission-button {
+  font-family: 'Roboto', sans-serif;
+  background: transparent;
+  padding: 0.5rem;
+  cursor: pointer;
+
+  &.join-mission {
+    color: $color-text-dark;
+    border: 2px solid $color-btn-join;
+    transition: 1s all ease-in-out;
+
+    &:hover {
+      background-color: $color-text-dark;
+      color: $color-text-light;
+      transition: all 0.3s ease-in;
+    }
+  }
+
+  &.leave-mission {
+    border: 2px solid $color-leave-mission;
+    color: $color-leave-mission;
+    transition: 1s all ease-in-out;
+
+    &:hover {
+      background-color: $color-leave-mission;
+      color: $color-text-light;
+      transition: all 0.3s ease-in;
+    }
+  }
+}

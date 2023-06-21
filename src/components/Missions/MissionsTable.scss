@@ -68,37 +68,6 @@
 
       &.mission-status {
         vertical-align: middle;
-
-        button {
-          font-family: 'Roboto', sans-serif;
-          background: transparent;
-          padding: 0.5rem;
-          cursor: pointer;
-
-          &.join-mission {
-            color: $color-text-dark;
-            border: 2px solid $color-btn-join;
-            transition: 1s all ease-in-out;
-
-            &:hover {
-              background-color: $color-text-dark;
-              color: $color-text-light;
-              transition: all 0.3s ease-in;
-            }
-          }
-
-          &.leave-mission {
-            border: 2px solid $color-leave-mission;
-            color: $color-leave-mission;
-            transition: 1s all ease-in-out;
-
-            &:hover {
-              background-color: $color-leave-mission;
-              color: $color-text-light;
-              transition: all 0.3s ease-in;
-            }
-          }
-        }
       }
 
       &.mission-status > button {
