@@ -18,6 +18,7 @@
     }
 
     ul {
+      display: flex;
       list-style-type: none;
       padding: 0;
       margin: 0;
@@ -30,7 +31,7 @@
         border-right: 1px solid #ccc;
         border-bottom: 1px solid #ccc;
         border-left: 1px solid #ccc;
-        padding: 1rem 1rem 1.5rem;
+        padding: 1rem 1rem 1rem;
         font-size: 1.5rem;
         background-color: transparent;
 
@@ -39,7 +40,6 @@
           justify-content: space-between;
           align-items: center;
           gap: 2rem;
-          align-items: center;
 
           .mission-name {
             flex: 1;
@@ -52,6 +52,20 @@
 
         &:last-child {
           border-bottom: 1px solid #ccc;
+        }
+      }
+
+      .added-rockets {
+        justify-content: space-between;
+
+        .buttons {
+          display: flex;
+          gap: 2rem;
+
+          .cancel-btn {
+            /* stylelint-disable-next-line at-rule-no-unknown */
+            @extend .mission-button, .leave-mission;
+          }
         }
       }
     }

@@ -19,6 +19,7 @@ export const fetchRockets = createAsyncThunk('rocket/fetchRockets', async () => 
       name: datax[i].name,
       description: datax[i].description,
       flickr_images: datax[i].flickr_images,
+      wikipedia: datax[i].wikipedia,
       id: datax[i].id,
     });
   }
