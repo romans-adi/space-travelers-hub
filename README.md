@@ -12,8 +12,8 @@ This project is designed to serve a company that offers commercial and scientifi
 
 - [Tech Stack ](#tech-stack-)
 - [Features ](#features-)
-  -[Key Features](#key-features)
-  -[Future Features](#future-features)
+  - [Key Features](#key-features)
+  - [Future Features](#future-features)
 - [Getting Started ](#-getting-started-)
   - [Installation](#installation)
   - [Setup](#setup)
@@ -35,7 +35,7 @@ This project is designed to serve a company that offers commercial and scientifi
  - [x] Rocket Booking System: Enables users to browse through available rockets, choose suitable options, and book them for specific missions.
  - [x] Mission Selection: Allows users to explore various space missions, access detailed information, and join the ones that align with their interests.
 
-### Future Features <a name="key-features"></a>
+### Future Features <a name="future-features"></a>
 
 - [ ] Responsive design for seamless usage on different devices.
 - [ ] Search and filter tasks based on different criteria.
