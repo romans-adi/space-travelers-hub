@@ -87,7 +87,6 @@
 }
 
 @media (max-width: 768px) {
-
   tr {
     display: flex;
     flex-wrap: wrap;
@@ -101,7 +100,7 @@
     display: none;
   }
 
-    td {
+  td {
     display: block;
     width: 100%;
     flex-basis: 100%;

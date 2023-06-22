@@ -42,7 +42,7 @@
           align-items: center;
           gap: 2rem;
 
-          .mission-name{
+          .mission-name {
             font-size: 1rem;
             flex: 1;
           }
@@ -64,7 +64,7 @@
 
         .rocket-name {
           font-size: 1rem;
-          flex: 1
+          flex: 1;
         }
 
         .buttons {
@@ -84,6 +84,7 @@
 @media (max-width: 768px) {
   .profile {
     gap: 5%;
+
     .joined-missions,
     .booked-rockets {
       h2 {
@@ -92,14 +93,12 @@
       }
 
       ul {
-
         li {
           font-size: 0.7rem;
         }
       }
     }
   }
-
 }
 
 @media (max-width: 620px) {
@@ -112,32 +111,31 @@
     justify-content: center;
     text-align: center;
 
-    ul {
-    .profile-missions-list,
-    .booked-rockets {
+    ul.profile-missions-list,
+    ul.booked-rockets {
       flex-wrap: wrap;
       flex-basis: 100%;
     }
 
-    .mission-name {
+    ul .mission-name {
       flex-basis: 100% !important;
     }
 
-    .mission-button,
-    .read-more-button {
+    ul .mission-button,
+    ul .read-more-button {
       flex-basis: 40%;
     }
-  }
+
+    .added-rockets,
+    .profile-missions-list {
+      flex-direction: column;
+      flex-basis: 40%;
+    }
 
     .joined-missions,
     .booked-rockets {
       width: 100%;
       margin-bottom: 1rem;
     }
-
-    .added-rockets,
-    .profile-missions-list {
-      flex-basis: 40%;
-    }
-}
+  }
 }
