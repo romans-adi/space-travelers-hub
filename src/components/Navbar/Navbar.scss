@@ -8,8 +8,12 @@ nav {
   padding-bottom: 1rem;
   border-bottom: 1px solid #ccc;
 
-  .logo-image {
-    width: 70px;
+  .logo {
+    margin-right: 2rem;
+
+    .logo-image {
+      width: 70px;
+    }
   }
 
   span {
@@ -39,5 +43,11 @@ nav {
         text-decoration: underline;
       }
     }
+  }
+}
+
+@media (max-width: 425px) {
+  nav ul {
+    flex-direction: column;
   }
 }

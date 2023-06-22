@@ -70,7 +70,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 620px) {
 .rocket-div {
   .rocket-list {
     .rocket {
@@ -81,7 +81,7 @@
       }
       p span {
         line-height: 2;
-        
+
         &::after {
           content: "\A";
           white-space: pre;

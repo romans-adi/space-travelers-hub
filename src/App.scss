@@ -1,16 +1,16 @@
 /* stylelint-disable at-rule-no-unknown */
 @use './variables';
 
-.wrapper {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 a {
@@ -24,4 +24,5 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
+  max-width: 100%;
 }

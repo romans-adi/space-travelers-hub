@@ -5,7 +5,7 @@
   justify-content: space-between;
   margin-top: 20px;
   width: 100%;
-  gap: 20%;
+  gap: 10%;
   font-family: 'Roboto', sans-serif;
 
   .joined-missions,
@@ -19,6 +19,7 @@
 
     ul {
       display: flex;
+      flex-direction: column;
       list-style-type: none;
       padding: 0;
       margin: 0;
@@ -41,7 +42,8 @@
           align-items: center;
           gap: 2rem;
 
-          .mission-name {
+          .mission-name{
+            font-size: 1rem;
             flex: 1;
           }
         }
@@ -56,7 +58,14 @@
       }
 
       .added-rockets {
+        display: flex;
         justify-content: space-between;
+        gap: 2rem;
+
+        .rocket-name {
+          font-size: 1rem;
+          flex: 1
+        }
 
         .buttons {
           display: flex;
@@ -70,4 +79,65 @@
       }
     }
   }
+}
+
+@media (max-width: 768px) {
+  .profile {
+    gap: 5%;
+    .joined-missions,
+    .booked-rockets {
+      h2 {
+        margin-bottom: 10px;
+        font-size: 1rem;
+      }
+
+      ul {
+
+        li {
+          font-size: 0.7rem;
+        }
+      }
+    }
+  }
+
+}
+
+@media (max-width: 620px) {
+  .profile {
+    width: 100%;
+    flex-basis: 100%;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10%;
+    justify-content: center;
+    text-align: center;
+
+    ul {
+    .profile-missions-list,
+    .booked-rockets {
+      flex-wrap: wrap;
+      flex-basis: 100%;
+    }
+
+    .mission-name {
+      flex-basis: 100% !important;
+    }
+
+    .mission-button,
+    .read-more-button {
+      flex-basis: 40%;
+    }
+  }
+
+    .joined-missions,
+    .booked-rockets {
+      width: 100%;
+      margin-bottom: 1rem;
+    }
+
+    .added-rockets,
+    .profile-missions-list {
+      flex-basis: 40%;
+    }
+}
 }

@@ -34,10 +34,10 @@ This project is designed to serve a company that offers commercial and scientifi
  - [x] User-Friendly Interface: Offers an intuitive and engaging user interface, ensuring a smooth booking experience for both commercial and scientific space travel.
  - [x] Rocket Booking System: Enables users to browse through available rockets, choose suitable options, and book them for specific missions.
  - [x] Mission Selection: Allows users to explore various space missions, access detailed information, and join the ones that align with their interests.
+ - [x] Responsive design for seamless usage on different devices.
 
 ### Future Features <a name="future-features"></a>
 
-- [ ] Responsive design for seamless usage on different devices.
 - [ ] Search and filter tasks based on different criteria.
 - [ ] Secure Authentication: Implements a robust authentication system to ensure the privacy and security of user accounts and personal information.
 - [ ] Payment Integration: Integrates a secure payment gateway to facilitate smooth and hassle-free transactions for rocket bookings.

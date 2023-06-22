@@ -85,3 +85,43 @@
     }
   }
 }
+
+@media (max-width: 768px) {
+
+  tr {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    border: none;
+    padding: 0 1rem;
+  }
+
+  th {
+    display: none;
+  }
+
+    td {
+    display: block;
+    width: 100%;
+    flex-basis: 100%;
+    border: none !important;
+
+    &.mission-name,
+    &.mission-description {
+      text-align: center;
+      padding: 2rem 0 0 !important;
+    }
+
+    &.mission-status,
+    &.status-col {
+      flex-basis: 40%;
+      padding: 1rem 0 !important;
+    }
+
+    &.mission-status,
+    &.mission-button {
+      padding-top: 1rem;
+    }
+  }
+}
