@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { joinMission, leaveMission } from '../../redux/missions/missionsSlice';
+import { joinMission, leaveMission } from '../../redux/missions/missionsActions';
 
 const MissionsButton = ({ missionId, joinedMissions }) => {
   const dispatch = useDispatch();
@@ -25,6 +25,7 @@ const MissionsButton = ({ missionId, joinedMissions }) => {
       </button>
     );
   }
+
   return (
     <button
       className="mission-button join-mission"

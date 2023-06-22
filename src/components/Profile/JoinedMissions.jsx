@@ -1,19 +1,13 @@
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import MissionsButton from '../Missions/MissionsButton';
-import { leaveMission } from '../../redux/missions/missionsSlice';
 
 const JoinedMissions = () => {
   const joinedMissions = useSelector((state) => state.missions.joinedMissions);
   const allMissions = useSelector((state) => state.missions.missions);
-  const dispatch = useDispatch();
 
-  const joinedMissionNames = allMissions
-    .filter((mission) => joinedMissions.includes(mission.mission_id));
-
-  const handleLeaveMission = (missionId) => {
-    dispatch(leaveMission(missionId));
-  };
+  // eslint-disable-next-line max-len
+  const joinedMissionNames = allMissions.filter((mission) => joinedMissions.includes(mission.mission_id));
 
   const openWikipediaPage = (url) => {
     if (url) {
@@ -34,7 +28,6 @@ const JoinedMissions = () => {
               <MissionsButton
                 missionId={mission.mission_id}
                 joinedMissions={joinedMissions}
-                onLeaveMission={handleLeaveMission}
               />
               <button
                 type="button"
