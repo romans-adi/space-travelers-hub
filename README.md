@@ -18,6 +18,7 @@ This project is designed to serve a company that offers commercial and scientifi
   - [Installation](#installation)
   - [Setup](#setup)
   - [Usage](#usage)
+  - [Tests](#tests)
 - [Contributing ](#-contributing-)
 - [License ](#-license-)
 - [Acknowledgments ](#-acknowledgments-)
@@ -119,7 +120,7 @@ Once the app is running, you can start booking rockets and joining space mission
 - Edit task details by clicking on a task and updating its information.
 - Update the status of a task to reflect its current state.
 
-### Tests
+### Tests <a name="tests"></a>
 
 To run tests, execute the following command:
 
