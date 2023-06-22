@@ -169,7 +169,7 @@ Furthermore, if you would like to get in touch with us, you can find our contact
 
 We would like to thank the following individuals and projects for their contributions and inspiration:
 
-[SpaceX API](https://github.com/r-spacex/SpaceX-API): For providing real-time data and information about rockets and space missions, enabling us to create an immersive space travel experience.
+[SpaceX API](https://github.com/r-spacex/SpaceX-API) : For providing real-time data and information about rockets and space missions, enabling us to create an immersive space travel experience.
 
 <!-- AUTHORS -->
 
@@ -187,4 +187,4 @@ We would like to thank the following individuals and projects for their contribu
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-🌌 Let's book rockets and reach for the stars! 🚀
+<div align="center">🌌 Let's book rockets and reach for the stars! 🚀</div>
