@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
 // import { createLogger } from 'redux-logger';
-import rocketReducer from './redux/rockects/rocketSlice';
+import rocketReducer from './redux/rockets/rocketSlice';
 import missionReducer from './redux/missions/missionsSlice';
 
 // const loggerMiddleware = createLogger();

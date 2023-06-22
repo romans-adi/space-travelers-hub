@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import {
   setAddedRockets,
   fetchRockets,
-} from '../../redux/rockects/rocketSlice';
+} from '../../redux/rockets/rocketSlice';
 import RocketTable from '../../components/Rockets/RocketsTable';
 
 const Rockets = () => {

@@ -1,17 +1,10 @@
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { removeRocket } from '../../redux/rockects/rocketSlice';
+import { useSelector } from 'react-redux';
 import RocketButtons from '../Rockets/RocketsButton';
 
 const AddedRockets = () => {
-  const addedRockets = useSelector((state) => state.rocket.addedRockets);
-  const allRockets = useSelector((state) => state.rocket.rockets);
-  const dispatch = useDispatch();
-  const addedRocketsNames = allRockets
-    .filter((rocket) => addedRockets.includes(rocket.id));
-  const handleRevome = (rocketId) => {
-    dispatch(removeRocket(rocketId));
-  };
+  // eslint-disable-next-line max-len
+  const addedRockets = useSelector((state) => state.rocket.rockets.filter((rocket) => rocket.reserved));
 
   const openWikipediaPage = (url) => {
     if (url) {
@@ -22,19 +15,15 @@ const AddedRockets = () => {
   return (
     <div className="booked-rockets">
       <h2>My Rockets</h2>
-      {addedRocketsNames.length === 0 ? (
+      {addedRockets.length === 0 ? (
         <p>No rockets reserved yet.</p>
       ) : (
         <ul>
-          {addedRocketsNames.map((rocket) => (
+          {addedRockets.map((rocket) => (
             <li className="added-rockets" key={rocket.id}>
               <div className="rocket-name">{rocket.name}</div>
               <div className="buttons">
-                <RocketButtons
-                  rocketId={rocket.id}
-                  addedRockets={addedRockets}
-                  onClick={handleRevome}
-                />
+                <RocketButtons rocketId={rocket.id} addedRockets={addedRockets} />
                 <button
                   type="button"
                   className="read-more-button"
