@@ -56,8 +56,6 @@ This project is designed to serve a company that offers commercial and scientifi
       <li><a href="https://sass-lang.com/">SCSS</a></li>
   </ul>
 
-Feel free to modify or expand the tech stack section based on the specific technologies you're using in your project.
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- LIVE DEMO -->
