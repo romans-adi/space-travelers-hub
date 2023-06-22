@@ -68,37 +68,6 @@
 
       &.mission-status {
         vertical-align: middle;
-
-        button {
-          font-family: 'Roboto', sans-serif;
-          background: transparent;
-          padding: 0.5rem;
-          cursor: pointer;
-
-          &.join-mission {
-            color: $color-text-dark;
-            border: 2px solid $color-btn-join;
-            transition: 1s all ease-in-out;
-
-            &:hover {
-              background-color: $color-text-dark;
-              color: $color-text-light;
-              transition: all 0.3s ease-in;
-            }
-          }
-
-          &.leave-mission {
-            border: 2px solid $color-leave-mission;
-            color: $color-leave-mission;
-            transition: 1s all ease-in-out;
-
-            &:hover {
-              background-color: $color-leave-mission;
-              color: $color-text-light;
-              transition: all 0.3s ease-in;
-            }
-          }
-        }
       }
 
       &.mission-status > button {
@@ -113,6 +82,46 @@
       td:last-child {
         text-align: center;
       }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+
+  tr {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    border: none;
+    padding: 0 1rem;
+  }
+
+  th {
+    display: none;
+  }
+
+    td {
+    display: block;
+    width: 100%;
+    flex-basis: 100%;
+    border: none !important;
+
+    &.mission-name,
+    &.mission-description {
+      text-align: center;
+      padding: 2rem 0 0 !important;
+    }
+
+    &.mission-status,
+    &.status-col {
+      flex-basis: 40%;
+      padding: 1rem 0 !important;
+    }
+
+    &.mission-status,
+    &.mission-button {
+      padding-top: 1rem;
     }
   }
 }

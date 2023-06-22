@@ -69,3 +69,25 @@
     }
   }
 }
+
+@media (max-width: 620px) {
+.rocket-div {
+  .rocket-list {
+    .rocket {
+      flex-direction: column;
+    margin-bottom: 2.5rem;
+    .info :first-child {
+      font-weight: bold;
+      }
+      p span {
+        line-height: 2;
+
+        &::after {
+          content: "\A";
+          white-space: pre;
+      }
+      }
+    }
+  }
+}
+}

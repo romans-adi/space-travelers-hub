@@ -12,12 +12,13 @@ This project is designed to serve a company that offers commercial and scientifi
 
 - [Tech Stack ](#tech-stack-)
 - [Features ](#features-)
-  -[Key Features](#key-features)
-  -[Future Features](#future-features)
+  - [Key Features](#key-features)
+  - [Future Features](#future-features)
 - [Getting Started ](#-getting-started-)
   - [Installation](#installation)
   - [Setup](#setup)
   - [Usage](#usage)
+  - [Tests](#tests)
 - [Contributing ](#-contributing-)
 - [License ](#-license-)
 - [Acknowledgments ](#-acknowledgments-)
@@ -33,10 +34,10 @@ This project is designed to serve a company that offers commercial and scientifi
  - [x] User-Friendly Interface: Offers an intuitive and engaging user interface, ensuring a smooth booking experience for both commercial and scientific space travel.
  - [x] Rocket Booking System: Enables users to browse through available rockets, choose suitable options, and book them for specific missions.
  - [x] Mission Selection: Allows users to explore various space missions, access detailed information, and join the ones that align with their interests.
+ - [x] Responsive design for seamless usage on different devices.
 
-### Future Features <a name="key-features"></a>
+### Future Features <a name="future-features"></a>
 
-- [ ] Responsive design for seamless usage on different devices.
 - [ ] Search and filter tasks based on different criteria.
 - [ ] Secure Authentication: Implements a robust authentication system to ensure the privacy and security of user accounts and personal information.
 - [ ] Payment Integration: Integrates a secure payment gateway to facilitate smooth and hassle-free transactions for rocket bookings.
@@ -54,8 +55,6 @@ This project is designed to serve a company that offers commercial and scientifi
       <li><a href="https://jestjs.io/">Jest</a></li>
       <li><a href="https://sass-lang.com/">SCSS</a></li>
   </ul>
-
-Feel free to modify or expand the tech stack section based on the specific technologies you're using in your project.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -119,7 +118,7 @@ Once the app is running, you can start booking rockets and joining space mission
 - Edit task details by clicking on a task and updating its information.
 - Update the status of a task to reflect its current state.
 
-### Tests
+### Tests <a name="tests"></a>
 
 To run tests, execute the following command:
 
@@ -170,7 +169,7 @@ Furthermore, if you would like to get in touch with us, you can find our contact
 
 We would like to thank the following individuals and projects for their contributions and inspiration:
 
-[SpaceX API](https://github.com/r-spacex/SpaceX-API): For providing real-time data and information about rockets and space missions, enabling us to create an immersive space travel experience.
+[SpaceX API](https://github.com/r-spacex/SpaceX-API) : For providing real-time data and information about rockets and space missions, enabling us to create an immersive space travel experience.
 
 <!-- AUTHORS -->
 
@@ -188,4 +187,4 @@ We would like to thank the following individuals and projects for their contribu
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-🌌 Let's book rockets and reach for the stars! 🚀
+<div align="center">🌌 Let's book rockets and reach for the stars! 🚀</div>

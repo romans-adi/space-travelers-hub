@@ -1,9 +1,11 @@
+@import '../../variables';
+
 .profile {
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
   width: 100%;
-  gap: 20%;
+  gap: 10%;
   font-family: 'Roboto', sans-serif;
 
   .joined-missions,
@@ -16,6 +18,8 @@
     }
 
     ul {
+      display: flex;
+      flex-direction: column;
       list-style-type: none;
       padding: 0;
       margin: 0;
@@ -28,9 +32,21 @@
         border-right: 1px solid #ccc;
         border-bottom: 1px solid #ccc;
         border-left: 1px solid #ccc;
-        padding: 1rem 0.5rem 1.5rem;
+        padding: 1rem 1rem 1rem;
         font-size: 1.5rem;
         background-color: transparent;
+
+        &.profile-missions-list {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          gap: 2rem;
+
+          .mission-name{
+            font-size: 1rem;
+            flex: 1;
+          }
+        }
 
         &:first-child {
           border-top: 1px solid #ccc;
@@ -40,6 +56,88 @@
           border-bottom: 1px solid #ccc;
         }
       }
+
+      .added-rockets {
+        display: flex;
+        justify-content: space-between;
+        gap: 2rem;
+
+        .rocket-name {
+          font-size: 1rem;
+          flex: 1
+        }
+
+        .buttons {
+          display: flex;
+          gap: 2rem;
+
+          .cancel-btn {
+            /* stylelint-disable-next-line at-rule-no-unknown */
+            @extend .mission-button, .leave-mission;
+          }
+        }
+      }
     }
   }
+}
+
+@media (max-width: 768px) {
+  .profile {
+    gap: 5%;
+    .joined-missions,
+    .booked-rockets {
+      h2 {
+        margin-bottom: 10px;
+        font-size: 1rem;
+      }
+
+      ul {
+
+        li {
+          font-size: 0.7rem;
+        }
+      }
+    }
+  }
+
+}
+
+@media (max-width: 620px) {
+  .profile {
+    width: 100%;
+    flex-basis: 100%;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10%;
+    justify-content: center;
+    text-align: center;
+
+    ul {
+    .profile-missions-list,
+    .booked-rockets {
+      flex-wrap: wrap;
+      flex-basis: 100%;
+    }
+
+    .mission-name {
+      flex-basis: 100% !important;
+    }
+
+    .mission-button,
+    .read-more-button {
+      flex-basis: 40%;
+    }
+  }
+
+    .joined-missions,
+    .booked-rockets {
+      width: 100%;
+      margin-bottom: 1rem;
+    }
+
+    .added-rockets,
+    .profile-missions-list {
+      flex-basis: 40%;
+    }
+}
 }
