@@ -1,6 +1,6 @@
 import {
   addRocket, removeRocket, ADD_ROCKET, REMOVE_ROCKET,
-} from '../redux/rockects/rocketActions';
+} from '../redux/rockets/rocketActions';
 
 describe('rocketSlice actions', () => {
   describe('addRocket', () => {

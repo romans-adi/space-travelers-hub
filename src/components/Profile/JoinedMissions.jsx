@@ -31,6 +31,7 @@ const JoinedMissions = () => {
               />
               <button
                 type="button"
+                data-testid={`missions-button-${mission.mission_id}`}
                 className="read-more-button"
                 onClick={() => openWikipediaPage(mission.wikipedia)}
               >

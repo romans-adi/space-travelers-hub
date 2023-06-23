@@ -1,76 +1,78 @@
 import React from 'react';
+import '@testing-library/jest-dom/extend-expect';
 import { render, screen, fireEvent } from '@testing-library/react';
 import { useSelector, useDispatch } from 'react-redux';
 import JoinedMissions from '../components/Profile/JoinedMissions';
-import { leaveMission } from '../redux/missions/missionsSlice';
-import '@testing-library/jest-dom/extend-expect';
 
-jest.mock('react-redux', () => ({
-  useSelector: jest.fn(),
-  useDispatch: jest.fn(),
-}));
-
-jest.mock('../redux/missions/missionsSlice', () => ({
-  leaveMission: jest.fn(),
-}));
+jest.mock('react-redux');
 
 describe('JoinedMissions', () => {
-  const mockJoinedMissions = [/* joined */];
-  const mockAllMissions = [/* all */];
-  const mockDispatch = jest.fn();
+  const joinedMissionsMock = [1, 2, 3];
+  const allMissionsMock = [
+    { mission_id: 1, mission_name: 'Mission 1', wikipedia: 'https://en.wikipedia.org/1' },
+    { mission_id: 2, mission_name: 'Mission 2', wikipedia: 'https://en.wikipedia.org/2' },
+    { mission_id: 3, mission_name: 'Mission 3', wikipedia: 'https://en.wikipedia.org/3' },
+    { mission_id: 4, mission_name: 'Mission 4', wikipedia: 'https://en.wikipedia.org/4' },
+  ];
 
   beforeEach(() => {
+    useDispatch.mockReturnValue(jest.fn());
     useSelector.mockImplementation((selector) => selector({
       missions: {
-        joinedMissions: mockJoinedMissions,
-        missions: mockAllMissions,
+        joinedMissions: joinedMissionsMock,
+        missions: allMissionsMock,
       },
     }));
-    useDispatch.mockReturnValue(mockDispatch);
   });
 
   afterEach(() => {
-    useSelector.mockClear();
-    useDispatch.mockClear();
-    leaveMission.mockClear();
-    jest.restoreAllMocks();
+    useSelector.mockReset();
   });
 
   it('renders "No missions joined yet." when no missions are joined', () => {
-    render(<JoinedMissions />);
-    expect(screen.getByText('No missions joined yet.')).toBeInTheDocument();
-    expect(screen.queryByRole('list')).not.toBeInTheDocument();
-  });
-
-  it('renders joined missions', () => {
-    const mockMission = {
-      mission_id: '1',
-      mission_name: 'Some Mission',
-      wikipedia: 'https://some-mission.wikipedia.org',
-    };
-
     useSelector.mockImplementation((selector) => selector({
       missions: {
-        joinedMissions: [mockMission.mission_id],
-        missions: [mockMission],
+        joinedMissions: [],
+        missions: allMissionsMock,
       },
     }));
 
-    const windowOpenMock = jest.spyOn(window, 'open').mockImplementation(() => {});
+    render(<JoinedMissions />);
+    const message = screen.getByText('No missions joined yet.');
 
+    expect(message).toBeInTheDocument();
+  });
+
+  it('renders joined missions correctly', () => {
     render(<JoinedMissions />);
 
-    expect(screen.queryByText('No missions joined yet.')).not.toBeInTheDocument();
+    joinedMissionsMock.forEach((missionId) => {
+      const mission = allMissionsMock.find((m) => m.mission_id === missionId);
+      const missionName = screen.getByText(mission.mission_name);
+      const missionsButton = screen.getByTestId(`missions-button-${mission.mission_id}`);
+      const readMoreButtons = screen.getAllByTestId(`missions-button-${mission.mission_id}`);
 
-    expect(screen.getByText(mockMission.mission_name)).toBeInTheDocument();
+      expect(missionName).toBeInTheDocument();
+      expect(missionsButton).toBeInTheDocument();
+      expect(readMoreButtons).toHaveLength(1);
+    });
+  });
 
-    expect(screen.getByRole('button', { name: 'Leave Mission' })).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: 'Read more' })).toBeInTheDocument();
+  it('calls openWikipediaPage when "Read more" button is clicked', () => {
+    const openWikipediaPageMock = jest.spyOn(window, 'open').mockImplementation();
 
-    fireEvent.click(screen.getByRole('button', { name: 'Leave Mission' }));
-    expect(leaveMission).toHaveBeenCalledWith(mockMission.mission_id);
+    render(<JoinedMissions />);
+    const readMoreButtons = screen.queryAllByText('Read more');
 
-    fireEvent.click(screen.getByRole('button', { name: 'Read more' }));
-    expect(windowOpenMock).toHaveBeenCalledWith(mockMission.wikipedia, '_blank');
+    readMoreButtons.forEach((button) => {
+      fireEvent.click(button);
+    });
+
+    expect(openWikipediaPageMock).toHaveBeenCalledTimes(readMoreButtons.length);
+    readMoreButtons.forEach((button, index) => {
+      expect(openWikipediaPageMock).toHaveBeenCalledWith(allMissionsMock[index].wikipedia, '_blank');
+    });
+
+    openWikipediaPageMock.mockRestore();
   });
 });

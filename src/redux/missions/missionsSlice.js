@@ -50,6 +50,8 @@ const missionsSlice = createSlice({
   },
 });
 
-export const { setJoinedMissions, updateMissionReservation } = missionsSlice.actions;
+export const {
+  setJoinedMissions, updateMissionReservation, joinMission, leaveMission,
+} = missionsSlice.actions;
 
 export default missionsSlice.reducer;

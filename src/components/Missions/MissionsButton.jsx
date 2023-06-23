@@ -38,8 +38,9 @@ const MissionsButton = ({ missionId, joinedMissions }) => {
 };
 
 MissionsButton.propTypes = {
-  missionId: PropTypes.string.isRequired,
-  joinedMissions: PropTypes.arrayOf(PropTypes.string).isRequired,
+  missionId: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+  // eslint-disable-next-line max-len
+  joinedMissions: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.number, PropTypes.string])).isRequired,
 };
 
 export default MissionsButton;

@@ -2,14 +2,14 @@ import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 import { useDispatch } from 'react-redux';
 import MissionsButton from '../components/Missions/MissionsButton';
-import { joinMission, leaveMission } from '../redux/missions/missionsSlice';
+import { joinMission, leaveMission } from '../redux/missions/missionsActions';
 import '@testing-library/jest-dom/extend-expect';
 
 jest.mock('react-redux', () => ({
   useDispatch: jest.fn(),
 }));
 
-jest.mock('../redux/missions/missionsSlice', () => ({
+jest.mock('../redux/missions/missionsActions', () => ({
   joinMission: jest.fn(),
   leaveMission: jest.fn(),
 }));
@@ -38,6 +38,7 @@ describe('MissionsButton', () => {
 
     fireEvent.click(joinButton);
     expect(joinMission).toHaveBeenCalledWith(missionId);
+    expect(dispatchMock).toHaveBeenCalledTimes(1);
   });
 
   it('should render Leave Mission button when joined', () => {
@@ -53,5 +54,6 @@ describe('MissionsButton', () => {
 
     fireEvent.click(leaveButton);
     expect(leaveMission).toHaveBeenCalledWith(missionId);
+    expect(dispatchMock).toHaveBeenCalledTimes(1);
   });
 });

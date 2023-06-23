@@ -19,7 +19,7 @@ const MissionsTable = () => {
           </tr>
         </thead>
         <tbody>
-          {missions.map((mission, index) => (
+          {missions && missions.map((mission, index) => (
             <tr key={mission.mission_id} style={{ backgroundColor: index % 2 === 0 ? '#eee' : '#fff' }}>
               <td className="mission-name">{mission.mission_name}</td>
               <td className="mission-description">{mission.description}</td>
