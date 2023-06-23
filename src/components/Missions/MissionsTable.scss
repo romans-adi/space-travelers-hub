@@ -1,0 +1,126 @@
+@import '../../variables';
+
+.missions {
+  text-align: left;
+  font-family: 'Roboto', sans-serif;
+  margin: 1rem 0 3rem;
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid $color-border;
+
+    .join-leave {
+      text-align: center;
+      padding: 0 5rem;
+    }
+
+    th,
+    td {
+      padding: 8px;
+      border: 1px solid $color-border;
+
+      &.mission-description {
+        font-family: 'Lato', sans-serif;
+        letter-spacing: 0.2px;
+        line-height: 1.6;
+      }
+
+      &.mission-name {
+        vertical-align: top;
+        font-weight: bold;
+      }
+
+      .member-status-badge {
+        display: inline-block;
+        padding: 4px 8px;
+        border-radius: 4px;
+        font-size: 14px;
+        font-weight: bold;
+      }
+
+      &.status-col {
+        pointer-events: none;
+        padding: 0.8rem;
+
+        .active-member {
+          background-color: $color-active-member;
+          font-weight: bold;
+          color: $color-text-light;
+          transition: 1s all ease-in-out;
+        }
+
+        .not-member {
+          background-color: $color-not-member;
+          text-transform: uppercase;
+          font-weight: bold;
+          color: $color-text-light;
+          transition: 1s all ease-in-out;
+        }
+      }
+
+      &.status-col,
+      &.mission-status {
+        text-align: center;
+        white-space: nowrap;
+        margin: 0.2rem;
+      }
+
+      &.mission-status {
+        vertical-align: middle;
+      }
+
+      &.mission-status > button {
+        overflow: hidden;
+        white-space: nowrap;
+      }
+
+      th {
+        font-weight: bold;
+      }
+
+      td:last-child {
+        text-align: center;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  tr {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    border: none;
+    padding: 0 1rem;
+  }
+
+  th {
+    display: none;
+  }
+
+  td {
+    display: block;
+    width: 100%;
+    flex-basis: 100%;
+    border: none !important;
+
+    &.mission-name,
+    &.mission-description {
+      text-align: center;
+      padding: 2rem 0 0 !important;
+    }
+
+    &.mission-status,
+    &.status-col {
+      flex-basis: 40%;
+      padding: 1rem 0 !important;
+    }
+
+    &.mission-status,
+    &.mission-button {
+      padding-top: 1rem;
+    }
+  }
+}

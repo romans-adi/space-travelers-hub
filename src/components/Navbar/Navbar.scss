@@ -1,0 +1,53 @@
+@import '../../variables';
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #ccc;
+
+  .logo {
+    margin-right: 2rem;
+
+    .logo-image {
+      width: 70px;
+    }
+  }
+
+  span {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  ul {
+    display: flex;
+    gap: 10px;
+    list-style: none;
+
+    li {
+      color: $main-blue;
+
+      .missions-link {
+        &::after {
+          content: "|";
+          color: $color-btn-join;
+          font-weight: bold;
+          padding-left: 7px;
+        }
+      }
+
+      .active {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+@media (max-width: 425px) {
+  nav ul {
+    flex-direction: column;
+  }
+}

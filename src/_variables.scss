@@ -1,0 +1,66 @@
+/* COLOR */
+
+$main-blue: #0074d9;
+$color-leave-mission: red;
+$color-border: #ccc;
+$color-btn-join: #111;
+$color-text-dark: #000;
+$color-active-member: lightseagreen;
+$color-not-member: #777;
+$color-text-light: #fff;
+
+/* FONTS */
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Roboto:wght@300;400;500;700&display=swap');
+
+/* BUTTONS */
+
+.mission-button {
+  font-family: 'Roboto', sans-serif;
+  background: transparent;
+  padding: 0.5rem;
+  cursor: pointer;
+
+  &.join-mission {
+    color: $color-text-dark;
+    border: 2px solid $color-btn-join;
+    transition: 1s all ease-in-out;
+
+    &:hover {
+      background-color: $color-text-dark;
+      color: $color-text-light;
+      transition: all 0.3s ease-in;
+    }
+  }
+
+  &.leave-mission {
+    border: 2px solid $color-leave-mission;
+    color: $color-leave-mission;
+    transition: 1s all ease-in-out;
+
+    &:hover {
+      background-color: $color-leave-mission;
+      color: $color-text-light;
+      transition: all 0.3s ease-in;
+    }
+  }
+}
+
+.read-more-button {
+  font-family: 'Roboto', sans-serif;
+  background: transparent;
+  color: $color-text-dark;
+  border: 2px solid $color-btn-join;
+  border-radius: 4px;
+  box-shadow: 0 4px 2px 0 rgba(0, 0, 0, 0.6);
+  padding: 0.5rem;
+  cursor: pointer;
+  transition: 600ms all ease-out;
+  font-weight: 500;
+
+  &:hover {
+    background-color: $color-text-dark;
+    color: $color-text-light;
+    box-shadow: none;
+  }
+}
